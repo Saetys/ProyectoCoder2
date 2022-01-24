@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body style="background-color: coral;">
+{% extends 'AppCoder2/padre.html' %}
 
-    <h1 style="color: darkgreen;">Esta es la página de Profesores</h1>
-    
-</body>
-</html>
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+    <h1>¡Esto es contenido propio de Profesores!</h1>
+
+{% endblock contenidoQueCambia %}

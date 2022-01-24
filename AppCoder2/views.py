@@ -4,14 +4,6 @@ from AppCoder2.models import Curso
  
 # Create your views here.
 
-#def crea_curso(self):
-    
- #   curso= Curso(nombre='Desarrollo Web', camada='19881')
-  #  curso.save()
-   # documentoDeTexto= f'--->Curso: {curso.nombre}    Camada: {curso.camada}'
-    
-    #return HttpResponse(documentoDeTexto)
-
 def inicio(request):
     
     return render(request, 'AppCoder2/inicio.html')
@@ -31,3 +23,16 @@ def estudiantes(request):
 def entregables(request):
     
     return render(request, 'AppCoder2/entregables.html')    
+
+def cursoFormulario(request):
+    
+    print(request.POST)
+    
+    if(request.method == 'POST'):
+    
+        curso= Curso(nombre=request.POST["curso"], camada=request.POST["camada"])
+        curso.save()
+        
+        return render(request, 'AppCoder2/inicio.html')
+    
+    return render(request, 'AppCoder2/cursoFormulario.html')
