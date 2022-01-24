@@ -1,0 +1,27 @@
+{% extends 'AppCoder2/padre.html' %}
+
+{% load static %}
+
+
+{% block contenidoQueCambia %}
+
+<h1>Resultados de la búsqueda</h1><br><br>
+<h3>Estos son los cursos para la camada {{camada}}</h3><br>
+
+
+{% if cursos %}
+    
+<ul>
+    
+    {% for curso in cursos %}
+        <li>
+            {{curso}}
+        </li>
+    {% endfor %}
+        
+</ul>
+{% endif %}
+    
+
+
+{% endblock contenidoQueCambia %}
